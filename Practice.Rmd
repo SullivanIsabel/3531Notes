@@ -65,3 +65,17 @@ Please refer to Figure \@ref(fig:pressure).
 #To connect to giHub: click on terminal tab and create a new repository on GitHub. Then go to push from existing command line. Ex:
   git remote add origin https://github.com/SullivanIsabel/3531Notes.git
 git push -u origin master
+
+
+#Bibliographic info:
+```{r, echo = FALSE, results = "hide"}
+PackagesUsed <- c("ggplot2", "bookdown")
+# Write bib information
+knitr::write_bib(PackagesUsed, file = "./packages.bib")
+# Load packages
+lapply(PackagesUsed, library, character.only = TRUE)
+```
+## Insert URL
+```{r, echo = FALSE}
+knitr::include_url("https://alanarnholt.github.io/GeneralStatistics/")
+```
