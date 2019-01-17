@@ -1,0 +1,67 @@
+---
+title: "3531Notes"
+author: "Isabel"
+date: "1/17/2019"
+output: bookdown::html_document2
+---
+
+
+Latec:
+Tranform equations into R readable
+inline $ $
+Display $$   $$
+Example: writing out average of a dataset
+$\bar{X} #This gives you an xbar
+\sum_{i = 1} ^n #This is the summation par of the mean equation
+\frac{x_i}{n} #This is the sample over total part
+#In total:
+$$\bar{X} = \sum_{i = 1} ^n\frac{x_i}{n}$$
+
+
+The average pressure for the 'pressure' data frame is `r round(mean(pressure$pressure),2)`mm
+
+The `r calls for this to appear in-line. The round(), 2 shows two decimal places
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA) 
+#setting global options here
+```
+
+Comment = NA removed the harshes in the cars dataset
+
+# R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r label = "pressure", echo=FALSE, fig.height = 4, fig.width=4, fig.align='center', fig.cap="Info for the caption here"}
+plot(pressure, col = "blue", pch = 19)
+```
+
+#Search for knitr to look at plot setting options like here with fig.width and height. Fig.cap provide captions which give the figure the label, 1.1
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#\begin can only be used in bookdown!
+\begin{equation}
+\bar{X} = \sum_{i = 1} ^n\frac{x_i}{n}
+(\#eq:mean)
+\end{equation}
+
+The sample mean is defined in Equation \@ref(eq:mean).
+
+Please refer to Figure \@ref(fig:pressure).
+
+#Put tab if refering to a table
+
+#To connect to giHub: click on terminal tab and create a new repository on GitHub. Then go to push from existing command line. Ex:
+  git remote add origin https://github.com/SullivanIsabel/3531Notes.git
+git push -u origin master
